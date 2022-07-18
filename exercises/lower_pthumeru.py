@@ -8,9 +8,9 @@ def start():
     print("'...Where am I?'")
     print("You awaken on a hospital bed in a dimly lit clinic.")
     print("Your torso is bandaged, but you don't recall being injured.")
-    print("What's your next move?\n")
+    print("What's your next move?")
     print("\t1. Leave through the unlocked door.")
-    print("\t2. Climb out the window, which is cracked open slightly.\n")
+    print("\t2. Climb out the window, which is cracked open slightly.")
     print("(Input 1 or 2, then press ENTER)")
 
     choice = input("> ")
@@ -24,6 +24,7 @@ def start():
         print("Command not recognized - try again.")
         start()
 
+
 def wolf_room():
     print("Passing into the next room, you notice a wolf-like beast...")
     print("...who appears to be feasting on a bloodied corpse.")
@@ -36,7 +37,16 @@ def wolf_room():
     wolf_health = 100
 
     choice = input("> ")
-    choice = int(choice)        
+    choice = int(choice)   
+
+    if choice == 1:
+        print("The wolf catches up to you and starts gnawing at your leg.")
+        player_health -= 25
+        print("Your foot's been torn off, but you can still hobble.")
+        print("\t1. Keep it moving - you still have a chance.")
+    elif choice == 2:
+        print("You snatch the axe and grip it with two hands.")     
+
 
 def rooftop():
     print("You exit through the window and find yourself on a rooftop.")
@@ -93,7 +103,6 @@ def rooftop():
     else:
         print("The creature senses your incompetence.")
         dead("From yards away, it sucks out your brain.")
-
 
 
 def lantern_room():
